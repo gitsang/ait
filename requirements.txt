@@ -1,0 +1,16 @@
+torch
+transformers
+datasets
+evaluate
+accelerate
+flake8
+ffmpeg
+wheel
+ffmpeg
+Pillow
+sentencepiece
+sacremoses
+accelerate
+bitsandbytes
+ffmpeg
+numpy
