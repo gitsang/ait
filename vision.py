@@ -11,4 +11,6 @@ for pred in preds:
     score = pred["score"]
     label = pred["label"]
     zh_label = translation(label)[0]["translation_text"]
+    if len(zh_label) > 100:
+        zh_label = label
     print(f"{score:.2}: {zh_label} ({label})")
