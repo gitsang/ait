@@ -7,36 +7,23 @@ tokenizer_name_or_path = "bigscience/mt0-large"
 output_dir="sang/mt0-large-lora"
 # model_name_or_path = "Qwen/Qwen2-0.5B-Instruct"
 # tokenizer_name_or_path = "Qwen/Qwen2-0.5B-Instruct"
-# output_dir="sang/Qwen2-0.5B-Instruct-lora"
+# output_dir = "sang/Qwen2-0.5B-Instruct-lora"
 
+# https://huggingface.co/docs/peft/v0.12.0/en/package_reference/lora#peft.LoraConfig
 peft_config = LoraConfig(
-    task_type=TaskType.SEQ_2_SEQ_LM, inference_mode=False, r=8, lora_alpha=32, lora_dropout=0.1
+    # the task to train for
+    # - SEQ_2_SEQ_LM: sequence-to-sequence language modeling
+    task_type=TaskType.SEQ_2_SEQ_LM,
+    # whether you’re using the model for inference or not
+    inference_mode=True,
+    # the dimension of the low-rank matrices
+    r=8,
+    # the scaling factor for the low-rank matrices
+    lora_alpha=32,
+    # the dropout probability of the LoRA layers
+    lora_dropout=0.1
 )
 
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
 model = get_peft_model(model, peft_config)
 model.print_trainable_parameters()
-
-training_args = TrainingArguments(
-    output_dir=output_dir,
-    learning_rate=1e-3,
-    per_device_train_batch_size=32,
-    per_device_eval_batch_size=32,
-    num_train_epochs=2,
-    weight_decay=0.01,
-    evaluation_strategy="epoch",
-    save_strategy="epoch",
-    load_best_model_at_end=True,
-)
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=tokenized_datasets["train"],
-    eval_dataset=tokenized_datasets["test"],
-    tokenizer=tokenizer,
-    data_collator=data_collator,
-    compute_metrics=compute_metrics,
-)
-trainer.train()
-
-# model.save_pretrained(output_dir)
