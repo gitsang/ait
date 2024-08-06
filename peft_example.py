@@ -1,5 +1,4 @@
 
-!pip install matplotlib
 !pip install torch
 !pip install transformers
 !pip install datasets
@@ -19,7 +18,7 @@
 !pip install peft
 !pip install datasets
 
-# |%%--%%| <DuTa9e3fMB|4vR2upyCnl>
+# |%%--%%| <t3HEGjlmCF|ZqeOKFKTgK>
 
 # configure
 model_name_or_path = "bigscience/mt0-large"
@@ -27,7 +26,7 @@ tokenizer_name_or_path = "bigscience/mt0-large"
 output_dir = "sang/mt0-large-lora"
 dataset_name="yelp_review_full"
 
-# |%%--%%| <4vR2upyCnl|fW9mHlM36k>
+# |%%--%%| <ZqeOKFKTgK|Cx4flL0AAB>
 
 # initialize
 from peft import LoraConfig, TaskType
@@ -53,7 +52,7 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
 model = get_peft_model(model, peft_config)
 model.print_trainable_parameters()
 
-# |%%--%%| <fW9mHlM36k|z0koORS9ZL>
+# |%%--%%| <Cx4flL0AAB|9ZPV8HI3lQ>
 
 # datasets
 from datasets import load_dataset
@@ -71,7 +70,7 @@ tokenized_datasets = dataset.map(tokenize_function, batched=True)
 small_train_dataset = tokenized_datasets["train"].shuffle(seed=42).select(range(1000))
 small_eval_dataset = tokenized_datasets["test"].shuffle(seed=42).select(range(1000))
 
-# |%%--%%| <z0koORS9ZL|Q7vcpMlZew>
+# |%%--%%| <9ZPV8HI3lQ|eUoY7PppA2>
 
 # metrics
 import numpy as np
@@ -83,7 +82,7 @@ def compute_metrics(eval_pred):
     predictions = np.argmax(logits, axis=-1)
     return metric.compute(predictions=predictions, references=labels)
 
-# |%%--%%| <Q7vcpMlZew|5RoyVyG8BF>
+# |%%--%%| <eUoY7PppA2|d8CLv64bL3>
 
 # trainer
 from transformers import TrainingArguments, Trainer
@@ -116,6 +115,6 @@ trainer.train()
 model.save_pretrained(output_dir)
 
 
-# |%%--%%| <5RoyVyG8BF|PFtoLpTxLm>
+# |%%--%%| <d8CLv64bL3|nLqQNHUeAy>
 
 model = AutoModelForCausalLM.from_pretrained(output_dir)
