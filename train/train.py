@@ -1,9 +1,15 @@
-# 加载模型和分词器
-from unsloth import FastLanguageModel
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, DataCollatorForSeq2Seq
 from local_dataset import LocalJsonDataset
-from safetensors.torch import load_model, save_model
 
-model_name_or_path = "Qwen/Qwen2-0.5B-Instruct"
+model_name_or_path = "bigscience/mt0-large"
+tokenizer_name_or_path = "bigscience/mt0-large"
+
+
+dataset = load_dataset(dataset_name)
+
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
+tokenizer = AutoTokenizer.from_pretrained(tokenizer_name_or_path)
+data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
 
 max_seq_length = 2048
 dtype = None
@@ -23,8 +29,6 @@ model = FastLanguageModel.get_peft_model(
     lora_alpha = 16,
     lora_dropout = 0, # Supports any, but = 0 is optimized
     bias = "none",    # Supports any, but = "none" is optimized
-    # [NEW] "unsloth" uses 30% less VRAM, fits 2x larger batch sizes!
-    use_gradient_checkpointing = "unsloth", # True or "unsloth" for very long context
     random_state = 3407,
     use_rslora = False,  # We support rank stabilized LoRA
     loftq_config = None, # And LoftQ
@@ -95,4 +99,3 @@ while True:
     answer = generate_answer(user_input)
     print("---")
     print(answer)
-
