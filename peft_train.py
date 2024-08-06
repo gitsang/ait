@@ -5,6 +5,9 @@ from transformers import AutoModelForSeq2SeqLM
 model_name_or_path = "bigscience/mt0-large"
 tokenizer_name_or_path = "bigscience/mt0-large"
 output_dir="sang/mt0-large-lora"
+# model_name_or_path = "Qwen/Qwen2-0.5B-Instruct"
+# tokenizer_name_or_path = "Qwen/Qwen2-0.5B-Instruct"
+# output_dir="sang/Qwen2-0.5B-Instruct-lora"
 
 peft_config = LoraConfig(
     task_type=TaskType.SEQ_2_SEQ_LM, inference_mode=False, r=8, lora_alpha=32, lora_dropout=0.1

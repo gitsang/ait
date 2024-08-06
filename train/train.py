@@ -3,11 +3,13 @@ from unsloth import FastLanguageModel
 from local_dataset import LocalJsonDataset
 from safetensors.torch import load_model, save_model
 
+model_name_or_path = "Qwen/Qwen2-0.5B-Instruct"
+
 max_seq_length = 2048
 dtype = None
 load_in_4bit = False
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name="Qwen/Qwen2-0.5B-Instruct",
+    model_name=model_name_or_path,
     max_seq_length=max_seq_length,
     dtype=dtype,
     load_in_4bit=load_in_4bit,
