@@ -1,6 +1,8 @@
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, DataCollatorForSeq2Seq
+from transformers import AutoModelForSeq2SeqLM
+from transformers import AutoTokenizer
+from transformers import DataCollatorForSeq2Seq
 from transformers import Trainer, TrainingArguments
-from datasets import LocalJsonDataset
+from json_datasets import LocalJsonDataset
 
 # configure
 model_name_or_path = "bigscience/mt0-large"
@@ -28,9 +30,6 @@ trainer = Trainer(
     model=model,
     tokenizer=tokenizer,
     train_dataset=dataset,
-    dataset_text_field="text",
-    max_seq_length=max_seq_length,
-    dataset_num_proc=2,
     args=TrainingArguments(
         output_dir=trainer_output_dir,
         eval_strategy="epoch"
