@@ -1,7 +1,7 @@
 import json
 from datasets import Dataset
 
-prompt = """
+input_prompt = """
 # {}
 
 ## Detection
@@ -53,21 +53,23 @@ score: {}
 {}
 """
 
+labels_prompt = "{}"
+
 
 class LocalJsonDataset:
-    def __init__(self, json_file, tokenizer, max_seq_length=2048):
+    def __init__(self, json_file, tokenizer):
         self.json_file = json_file
         self.tokenizer = tokenizer
-        self.max_seq_length = max_seq_length
         self.dataset = self.load_dataset()
 
     def load_dataset(self):
         with open(self.json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        texts = []
+        inputs = []
+        labels = []
         for item in data:
-            text = prompt.format(
+            input_text = input_prompt.format(
                 item['file']['name'],
                 item['detect']['config']['name'],
                 item['detect']['config']['regexs'],
@@ -84,13 +86,17 @@ class LocalJsonDataset:
                 item['risk']['security']['score'],
                 item['risk']['security']['gists'],
             ) + self.tokenizer.eos_token
-            texts.append(text)
+            inputs.append(input_text)
 
-        dataset_dict = {
-            'text': texts
-        }
+            label_text = labels_prompt.format(
+                item['risk']['confidence']['score']
+            )
+            labels.append(label_text)
 
-        dataset = Dataset.from_dict(dataset_dict)
+        dataset = Dataset.from_dict({
+            "input_text": inputs,
+            "label_text": labels
+        })
         return dataset
 
     def get_dataset(self):

@@ -52,7 +52,7 @@
     "file": {
       "name": "dect-server-146.85.249.177.zip"
     },
-    "dectct": {
+    "detect": {
       "config": {
         "name": "ip_detect",
         "regexs": [
