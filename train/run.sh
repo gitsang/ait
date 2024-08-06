@@ -1,1 +1,0 @@
-./py311/bin/python3 run.py
