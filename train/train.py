@@ -13,7 +13,6 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit=load_in_4bit,
 )
 
-
 model = FastLanguageModel.get_peft_model(
     model,
     r = 16, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
@@ -28,8 +27,6 @@ model = FastLanguageModel.get_peft_model(
     use_rslora = False,  # We support rank stabilized LoRA
     loftq_config = None, # And LoftQ
 )
-
-
 
 # 加载和预处理数据集
 custom_dataset = LocalJsonDataset(json_file='train_data.json', tokenizer=tokenizer, max_seq_length=max_seq_length)
