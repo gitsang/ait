@@ -50,10 +50,6 @@ def main():
         args=TrainingArguments(
             output_dir=trainer_output_dir,
             eval_strategy="epoch",
-            per_device_train_batch_size=4,
-            per_device_eval_batch_size=4,
-            gradient_accumulation_steps=4,
-            fp16=True,
         ),
     )
 
