@@ -2,26 +2,57 @@ import json
 from datasets import Dataset
 
 prompt = """
-### File Info
+# {}
 
-- Name: {}
-- Path: {}
-- Type: {}
+## Detection
+
+### Config: {}
+
+{}
+
+### Location
+
+{}:{}
+
+### 2.3 Result
+
+#### Type
+
+{}
+
+#### Text
+
+{}
+
+#### Context
+
+{}
+
+### Details
+
+```json
+{}
+```
 
 ### Risk
 
-- Type: {}
-- Confidence: {}
-- Description: {}
+Type: {}
 
-### Matched Result
+Ignore: {}
+
+#### Confidence
+
+score: {}
 
 {}
 
-### Context
+#### Security
+
+score: {}
 
 {}
 """
+
 
 class LocalJsonDataset:
     def __init__(self, json_file, tokenizer, max_seq_length=2048):
@@ -38,13 +69,20 @@ class LocalJsonDataset:
         for item in data:
             text = prompt.format(
                 item['file']['name'],
-                item['file']['path'],
-                item['file']['type'],
+                item['detect']['config']['name'],
+                item['detect']['config']['regexs'],
+                item['detect']['location']['path'],
+                item['detect']['location']['line'],
+                item['detect']['result']['type'],
+                item['detect']['result']['text'],
+                item['detect']['result']['context'],
+                json.dumps(item['detect']['details']),
                 item['risk']['type'],
-                item['risk']['confidence'],
-                item['risk']['description'],
-                item['matched_result'],
-                item['context']
+                item['risk']['ignore'],
+                item['risk']['confidence']['score'],
+                item['risk']['confidence']['gists'],
+                item['risk']['security']['score'],
+                item['risk']['security']['gists'],
             ) + self.tokenizer.eos_token
             texts.append(text)
 

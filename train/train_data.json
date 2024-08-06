@@ -1,16 +1,104 @@
 [
   {
     "file": {
-      "name": "",
-      "path": "",
-      "type": ""
+      "name": "dect-server-146.85.249.177.zip"
     },
-    "matched_result": "",
-    "context": "",
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5913
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "146.85.249.177",
+        "context": "146.85.249.177-release(Aug  6 2024,16:44:27)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "146.85.249.177",
+          "city": "Columbus",
+          "region": "Ohio",
+          "country": "US",
+          "loc": "39.9874,-83.0456",
+          "org": "AS600 OARnet",
+          "postal": "43212",
+          "timezone": "America/New_York"
+        }
+      }
+    },
     "risk": {
-      "type": "",
-      "confidence": 0,
-      "description": ""
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.9,
+        "gists": [
+          "`146.85.249.177` is the version of dectserver, which is same with origin file name `dect-server-146.85.249.177.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-146.85.249.177.zip"
+    },
+    "dectct": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 8643
+      } ,
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "1.1.1.1",
+        "context": "1.1.1.1[%d]speed test start"
+      },
+      "details": {
+        "geo": {
+          "ip": "1.1.1.1",
+          "hostname": "one.one.one.one",
+          "anycast": true,
+          "city": "Pyongyang",
+          "region": "Pyongyang",
+          "country": "KP",
+          "loc": "39.0339,125.7543",
+          "org": "AS13335 Cloudflare, Inc.",
+          "timezone": "Asia/Pyongyang"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`1.1.1.1` is the dns server provided by Cloudflare.",
+          "Proven by development: Used to resolve hostname."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is the public DNS server.",
+          "Can be reconfigure via config file."
+        ]
+      }
     }
   }
 ]
