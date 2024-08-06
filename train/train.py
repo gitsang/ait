@@ -8,7 +8,7 @@ from json_datasets import LocalJsonDataset
 model_name_or_path = "bigscience/mt0-large"
 tokenizer_name_or_path = "bigscience/mt0-large"
 lora_model_dir = "lora_model"
-trainer_output_dir = "test_trainer"
+trainer_output_dir = "output_dir"
 dataset_path = "train_data.json"
 
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
@@ -50,6 +50,10 @@ def main():
         args=TrainingArguments(
             output_dir=trainer_output_dir,
             eval_strategy="epoch",
+            per_device_train_batch_size=4,
+            per_device_eval_batch_size=4,
+            gradient_accumulation_steps=4,
+            fp16=True,
         ),
     )
 
