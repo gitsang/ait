@@ -14,3 +14,4 @@ accelerate
 bitsandbytes
 ffmpeg
 numpy
+peft
