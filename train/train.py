@@ -1,50 +1,30 @@
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, DataCollatorForSeq2Seq
-from local_dataset import LocalJsonDataset
+from transformers import Trainer, TrainingArguments
+from datasets import LocalJsonDataset
 
+# configure
 model_name_or_path = "bigscience/mt0-large"
 tokenizer_name_or_path = "bigscience/mt0-large"
+lora_model_dir = "lora_model"
+trainer_output_dir = "test_trainer"
+dataset_path = "train_data.json"
+max_seq_length = 2048
 
-
-dataset = load_dataset(dataset_name)
-
+# model and tokenizer
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_name_or_path)
 data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
 
-max_seq_length = 2048
-dtype = None
-load_in_4bit = False
-model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name=model_name_or_path,
-    max_seq_length=max_seq_length,
-    dtype=dtype,
-    load_in_4bit=load_in_4bit,
+# datasets
+custom_dataset = LocalJsonDataset(
+    json_file=dataset_path,
+    tokenizer=tokenizer,
+    max_seq_length=max_seq_length
 )
-
-model = FastLanguageModel.get_peft_model(
-    model,
-    r = 16, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
-    target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
-                      "gate_proj", "up_proj", "down_proj",],
-    lora_alpha = 16,
-    lora_dropout = 0, # Supports any, but = 0 is optimized
-    bias = "none",    # Supports any, but = "none" is optimized
-    random_state = 3407,
-    use_rslora = False,  # We support rank stabilized LoRA
-    loftq_config = None, # And LoftQ
-)
-
-# 加载和预处理数据集
-custom_dataset = LocalJsonDataset(json_file='train_data.json', tokenizer=tokenizer, max_seq_length=max_seq_length)
 dataset = custom_dataset.get_dataset()
 
-
-# 设置训练配置
-from trl import SFTTrainer
-from transformers import TrainingArguments
-from unsloth import is_bfloat16_supported
-
-trainer = SFTTrainer(
+# trainer
+trainer = Trainer(
     model=model,
     tokenizer=tokenizer,
     train_dataset=dataset,
@@ -52,50 +32,12 @@ trainer = SFTTrainer(
     max_seq_length=max_seq_length,
     dataset_num_proc=2,
     args=TrainingArguments(
-        per_device_train_batch_size=4,
-        gradient_accumulation_steps=8,
-        warmup_steps=20,
-        max_steps=2000,
-        learning_rate=5e-5,
-        fp16=not is_bfloat16_supported(),
-        bf16=is_bfloat16_supported(),
-        logging_steps=1,
-        optim="adamw_8bit",
-        weight_decay=0.01,
-        lr_scheduler_type="linear",
-        seed=3407,
-        output_dir="outputs",
-        #save_strategy="no"
+        output_dir=trainer_output_dir,
+        eval_strategy="epoch"
     ),
 )
 
-
-# 训练模型
+# train
 trainer.train()
-model.save_pretrained("lora_model")
-tokenizer.save_pretrained("lora_model")
-
-
-FastLanguageModel.for_inference(model)
-
-def generate_answer(question):
-    input_text = f"下面列出了一个问题. 请写出问题的答案.\n####问题:{question}\n####答案:"
-    inputs = tokenizer(
-        [input_text],
-        return_tensors="pt",
-        padding=True,
-        truncation=True
-    ).to("cuda")
-    outputs = model.generate(**inputs, max_new_tokens=2048, use_cache=True)
-    decoded_output = tokenizer.batch_decode(outputs, skip_special_tokens=True)[0]
-    return decoded_output.split('<|im_end|>')[0].strip()
-
-print("请输入您的问题,输入'exit'退出:")
-while True:
-    user_input = input("> ")
-    if user_input.lower() == 'exit':
-        print("程序已退出。")
-        break
-    answer = generate_answer(user_input)
-    print("---")
-    print(answer)
+model.save_pretrained(lora_model_dir)
+tokenizer.save_pretrained(lora_model_dir)

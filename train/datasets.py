@@ -1,11 +1,27 @@
 import json
 from datasets import Dataset
 
-custom_prompt = """下面列出了一个问题. 请写出问题的答案.
-### 问题:
+prompt = """
+### File Info
+
+- Name: {}
+- Path: {}
+- Type: {}
+
+### Risk
+
+- Type: {}
+- Confidence: {}
+- Description: {}
+
+### Matched Result
+
 {}
-### 答案:
-{}"""
+
+### Context
+
+{}
+"""
 
 class LocalJsonDataset:
     def __init__(self, json_file, tokenizer, max_seq_length=2048):
@@ -20,14 +36,20 @@ class LocalJsonDataset:
 
         texts = []
         for item in data:
-            text = custom_prompt.format(
-                item['question'],
-                item['answer']
+            text = prompt.format(
+                item['file']['name'],
+                item['file']['path'],
+                item['file']['type'],
+                item['risk']['type'],
+                item['risk']['confidence'],
+                item['risk']['description'],
+                item['matched_result'],
+                item['context']
             ) + self.tokenizer.eos_token
             texts.append(text)
 
         dataset_dict = {
-            'text': texts  # 添加'text'字段以适配SFTTrainer
+            'text': texts
         }
 
         dataset = Dataset.from_dict(dataset_dict)
