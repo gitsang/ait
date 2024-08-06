@@ -1,0 +1,3 @@
+xformers<0.0.27
+trl<0.9.0
+unsloth
