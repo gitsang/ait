@@ -1,6 +1,5 @@
 from unsloth import FastLanguageModel
 
-
 max_seq_length = 2048
 dtype = None
 load_in_4bit = False
@@ -11,15 +10,14 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit=load_in_4bit,
 )
 
-
 FastLanguageModel.for_inference(model)
 
 def generate_answer(question):
     input_text = f"下面列出了一个问题. 请写出问题的答案.\n####问题:{question}\n####答案:"
     inputs = tokenizer(
-        [input_text], 
-        return_tensors="pt", 
-        padding=True, 
+        [input_text],
+        return_tensors="pt",
+        padding=True,
         truncation=True
     ).to("cuda")
     outputs = model.generate(**inputs, max_new_tokens=2048, use_cache=True)
