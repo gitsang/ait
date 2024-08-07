@@ -6,7 +6,7 @@ In the extracted of `{}`, we found `{}` from `{}` file `{}:{}` by config `{}`.
 Please tell me the risk.
 """
 
-labels_prompt = """
+labels_tmpl = """
 There is the risk of `{}`, with confidence `{}`, because:
 {}
 """
@@ -35,7 +35,7 @@ class LocalJsonDataset:
             ) + self.tokenizer.eos_token
             inputs.append(input_text)
 
-            label_text = labels_prompt.format(
+            label_text = labels_tmpl.format(
                 item['risk']['type'],
                 item['risk']['confidence']['score'],
                 item['risk']['confidence']['gists'],

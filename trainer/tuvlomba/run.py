@@ -1,5 +1,3 @@
-import json
-
 from transformers import AutoModelForSeq2SeqLM
 from transformers import AutoTokenizer
 
@@ -8,46 +6,20 @@ tokenizer_name_or_path = "lora_model"
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_name_or_path)
 
-input_prompt = """
-Please tell me the risk:
-# {}
-
-## Detection
-
-### Config: {}
-
-{}
-
-### Location
-
-{}:{}
-
-### 2.3 Result
-
-#### Type
-
-{}
-
-#### Text
-
-{}
-
-#### Context
-
-{}
+input_tmpl = """
+In the extracted of `{}`, we found `{}` from `{}` file `{}:{}` by config `{}`.
+Please tell me the risk.
 """
 
 
 def generate_answer(item):
-    input_text = input_prompt.format(
+    input_text = input_tmpl.format(
         item['file']['name'],
-        item['detect']['config']['name'],
-        item['detect']['config']['regexs'],
+        item['detect']['result']['text'],
+        item['detect']['result']['type'],
         item['detect']['location']['path'],
         item['detect']['location']['line'],
-        item['detect']['result']['type'],
-        item['detect']['result']['text'],
-        item['detect']['result']['context'],
+        item['detect']['config']['name'],
     )
     inputs = tokenizer(
         [input_text],
