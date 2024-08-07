@@ -1,59 +1,17 @@
 import json
 from datasets import Dataset
 
-input_prompt = """
-# {}
-
-## Detection
-
-### Config: {}
-
+input_prompt = """下面列出了一个问题. 请写出问题的答案.
+### 问题:
 {}
+### 答案:
+{}"""
 
-### Location
-
-{}:{}
-
-### 2.3 Result
-
-#### Type
-
+label_prompt = """下面列出了一个问题. 请写出问题的答案.
+### 问题:
 {}
-
-#### Text
-
-{}
-
-#### Context
-
-{}
-
-### Details
-
-```json
-{}
-```
-
-### Risk
-
-Type: {}
-
-Ignore: {}
-
-#### Confidence
-
-score: {}
-
-{}
-
-#### Security
-
-score: {}
-
-{}
-"""
-
-labels_prompt = "{}"
+### 答案:
+{}"""
 
 
 class LocalJsonDataset:
@@ -70,27 +28,9 @@ class LocalJsonDataset:
         labels = []
         for item in data:
             input_text = input_prompt.format(
-                item['file']['name'],
-                item['detect']['config']['name'],
-                item['detect']['config']['regexs'],
-                item['detect']['location']['path'],
-                item['detect']['location']['line'],
-                item['detect']['result']['type'],
-                item['detect']['result']['text'],
-                item['detect']['result']['context'],
-                json.dumps(item['detect']['details']),
-                item['risk']['type'],
-                item['risk']['ignore'],
-                item['risk']['confidence']['score'],
-                item['risk']['confidence']['gists'],
-                item['risk']['security']['score'],
-                item['risk']['security']['gists'],
-            ) + self.tokenizer.eos_token
+                item['question'], item['answer']) + self.tokenizer.eos_token
             inputs.append(input_text)
-
-            label_text = labels_prompt.format(
-                item['risk']['confidence']['score']
-            )
+            label_text = label_prompt.format(item['answer'])
             labels.append(label_text)
 
         dataset = Dataset.from_dict({
