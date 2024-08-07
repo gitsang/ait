@@ -3,8 +3,11 @@ from transformers import AutoTokenizer
 
 model_name_or_path = "lora_model"
 tokenizer_name_or_path = "lora_model"
+# model_name_or_path = "bigscience/mt0-large"
+# tokenizer_name_or_path = "bigscience/mt0-large"
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
-tokenizer = AutoTokenizer.from_pretrained(tokenizer_name_or_path)
+tokenizer = AutoTokenizer.from_pretrained(
+        tokenizer_name_or_path, model_max_length=1024)
 
 input_tmpl = """
 In the extracted of `{}`, we found `{}` from `{}` file `{}:{}` by config `{}`.

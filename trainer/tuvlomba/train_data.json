@@ -62,7 +62,7 @@
       "location": {
         "path": "/dectserver",
         "line": 8643
-      } ,
+      },
       "result": {
         "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
         "text": "1.1.1.1",
@@ -97,6 +97,2760 @@
         "gists": [
           "Is the public DNS server.",
           "Can be reconfigure via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 1234
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.5",
+        "context": "203.0.113.5-release(Aug  7 2024,12:00:00)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.8,
+        "gists": [
+          "`203.0.113.5` is the version of dectserver, which is same with origin file name `dect-server-203.0.113.5.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5678
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "192.0.2.1[%d]connection established"
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 4321
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "198.51.100.2",
+        "context": "198.51.100.2-release(Aug  7 2024,12:34:56)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of dectserver, which is same with origin file name `dect-server-198.51.100.2.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 7890
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "203.0.113.10[%d]diagnostic start"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 1234
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.5",
+        "context": "Server IP: 203.0.113.5, last update on Aug 7 2024, 12:00:00"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.8,
+        "gists": [
+          "`203.0.113.5` is the version of dectserver, which is same with origin file name `dect-server-203.0.113.5.zip`",
+          "The matched context indicates a server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5678
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "Testing connection to 192.0.2.1, please wait..."
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 4321
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "198.51.100.2",
+        "context": "Update server IP: 198.51.100.2, version: %s"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of dectserver, which is same with origin file name `dect-server-198.51.100.2.zip`",
+          "The matched context indicates an update server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 7890
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "Diagnostic server: 203.0.113.10, initiating tests"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+   {
+    "file": {
+      "name": "network-config-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/config/network",
+        "line": 102
+      },
+      "result": {
+        "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped",
+        "text": "203.0.113.5",
+        "context": "Primary server IP: 203.0.113.5, set on Aug 7 2024"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "UNAUTHORIZED_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.7,
+        "gists": [
+          "`203.0.113.5` is the version of the primary server, matching the file name `network-config-203.0.113.5.zip`",
+          "The context indicates a primary server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "example-data-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/data/examples",
+        "line": 215
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "Attempting connection to example server at 192.0.2.1"
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "POTENTIAL_MISCONFIGURATION",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "update-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/updates",
+        "line": 378
+      },
+      "result": {
+        "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped",
+        "text": "198.51.100.2",
+        "context": "Update server IP: 198.51.100.2, last checked on Aug 7 2024"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "NETWORK_CONFIGURATION",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of the update server, matching the file name `update-server-198.51.100.2.zip`",
+          "The context indicates an update server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "diagnostic-tool-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/diagnostics",
+        "line": 654
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "Diagnostic tool connected to 203.0.113.10, running tests"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "DIAGNOSTIC_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-146.85.249.177.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5913
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "146.85.249.177",
+        "context": "146.85.249.177-release(Aug  6 2024,16:44:27)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "146.85.249.177",
+          "city": "Columbus",
+          "region": "Ohio",
+          "country": "US",
+          "loc": "39.9874,-83.0456",
+          "org": "AS600 OARnet",
+          "postal": "43212",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.9,
+        "gists": [
+          "`146.85.249.177` is the version of dectserver, which is same with origin file name `dect-server-146.85.249.177.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-146.85.249.177.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 8643
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "1.1.1.1",
+        "context": "1.1.1.1[%d]speed test start"
+      },
+      "details": {
+        "geo": {
+          "ip": "1.1.1.1",
+          "hostname": "one.one.one.one",
+          "anycast": true,
+          "city": "Pyongyang",
+          "region": "Pyongyang",
+          "country": "KP",
+          "loc": "39.0339,125.7543",
+          "org": "AS13335 Cloudflare, Inc.",
+          "timezone": "Asia/Pyongyang"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`1.1.1.1` is the dns server provided by Cloudflare.",
+          "Proven by development: Used to resolve hostname."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is the public DNS server.",
+          "Can be reconfigure via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 1234
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.5",
+        "context": "203.0.113.5-release(Aug  7 2024,12:00:00)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.8,
+        "gists": [
+          "`203.0.113.5` is the version of dectserver, which is same with origin file name `dect-server-203.0.113.5.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5678
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "192.0.2.1[%d]connection established"
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 4321
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "198.51.100.2",
+        "context": "198.51.100.2-release(Aug  7 2024,12:34:56)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of dectserver, which is same with origin file name `dect-server-198.51.100.2.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 7890
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "203.0.113.10[%d]diagnostic start"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 1234
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.5",
+        "context": "Server IP: 203.0.113.5, last update on Aug 7 2024, 12:00:00"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.8,
+        "gists": [
+          "`203.0.113.5` is the version of dectserver, which is same with origin file name `dect-server-203.0.113.5.zip`",
+          "The matched context indicates a server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5678
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "Testing connection to 192.0.2.1, please wait..."
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 4321
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "198.51.100.2",
+        "context": "Update server IP: 198.51.100.2, version: %s"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of dectserver, which is same with origin file name `dect-server-198.51.100.2.zip`",
+          "The matched context indicates an update server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 7890
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "Diagnostic server: 203.0.113.10, initiating tests"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+   {
+    "file": {
+      "name": "network-config-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/config/network",
+        "line": 102
+      },
+      "result": {
+        "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped",
+        "text": "203.0.113.5",
+        "context": "Primary server IP: 203.0.113.5, set on Aug 7 2024"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "UNAUTHORIZED_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.7,
+        "gists": [
+          "`203.0.113.5` is the version of the primary server, matching the file name `network-config-203.0.113.5.zip`",
+          "The context indicates a primary server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "example-data-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/data/examples",
+        "line": 215
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "Attempting connection to example server at 192.0.2.1"
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "POTENTIAL_MISCONFIGURATION",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "update-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/updates",
+        "line": 378
+      },
+      "result": {
+        "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped",
+        "text": "198.51.100.2",
+        "context": "Update server IP: 198.51.100.2, last checked on Aug 7 2024"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "NETWORK_CONFIGURATION",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of the update server, matching the file name `update-server-198.51.100.2.zip`",
+          "The context indicates an update server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "diagnostic-tool-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/diagnostics",
+        "line": 654
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "Diagnostic tool connected to 203.0.113.10, running tests"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "DIAGNOSTIC_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-146.85.249.177.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5913
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "146.85.249.177",
+        "context": "146.85.249.177-release(Aug  6 2024,16:44:27)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "146.85.249.177",
+          "city": "Columbus",
+          "region": "Ohio",
+          "country": "US",
+          "loc": "39.9874,-83.0456",
+          "org": "AS600 OARnet",
+          "postal": "43212",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.9,
+        "gists": [
+          "`146.85.249.177` is the version of dectserver, which is same with origin file name `dect-server-146.85.249.177.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-146.85.249.177.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 8643
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "1.1.1.1",
+        "context": "1.1.1.1[%d]speed test start"
+      },
+      "details": {
+        "geo": {
+          "ip": "1.1.1.1",
+          "hostname": "one.one.one.one",
+          "anycast": true,
+          "city": "Pyongyang",
+          "region": "Pyongyang",
+          "country": "KP",
+          "loc": "39.0339,125.7543",
+          "org": "AS13335 Cloudflare, Inc.",
+          "timezone": "Asia/Pyongyang"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`1.1.1.1` is the dns server provided by Cloudflare.",
+          "Proven by development: Used to resolve hostname."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is the public DNS server.",
+          "Can be reconfigure via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 1234
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.5",
+        "context": "203.0.113.5-release(Aug  7 2024,12:00:00)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.8,
+        "gists": [
+          "`203.0.113.5` is the version of dectserver, which is same with origin file name `dect-server-203.0.113.5.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5678
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "192.0.2.1[%d]connection established"
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 4321
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "198.51.100.2",
+        "context": "198.51.100.2-release(Aug  7 2024,12:34:56)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of dectserver, which is same with origin file name `dect-server-198.51.100.2.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 7890
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "203.0.113.10[%d]diagnostic start"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 1234
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.5",
+        "context": "Server IP: 203.0.113.5, last update on Aug 7 2024, 12:00:00"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.8,
+        "gists": [
+          "`203.0.113.5` is the version of dectserver, which is same with origin file name `dect-server-203.0.113.5.zip`",
+          "The matched context indicates a server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5678
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "Testing connection to 192.0.2.1, please wait..."
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 4321
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "198.51.100.2",
+        "context": "Update server IP: 198.51.100.2, version: %s"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of dectserver, which is same with origin file name `dect-server-198.51.100.2.zip`",
+          "The matched context indicates an update server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 7890
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "Diagnostic server: 203.0.113.10, initiating tests"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+   {
+    "file": {
+      "name": "network-config-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/config/network",
+        "line": 102
+      },
+      "result": {
+        "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped",
+        "text": "203.0.113.5",
+        "context": "Primary server IP: 203.0.113.5, set on Aug 7 2024"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "UNAUTHORIZED_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.7,
+        "gists": [
+          "`203.0.113.5` is the version of the primary server, matching the file name `network-config-203.0.113.5.zip`",
+          "The context indicates a primary server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "example-data-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/data/examples",
+        "line": 215
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "Attempting connection to example server at 192.0.2.1"
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "POTENTIAL_MISCONFIGURATION",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "update-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/updates",
+        "line": 378
+      },
+      "result": {
+        "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped",
+        "text": "198.51.100.2",
+        "context": "Update server IP: 198.51.100.2, last checked on Aug 7 2024"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "NETWORK_CONFIGURATION",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of the update server, matching the file name `update-server-198.51.100.2.zip`",
+          "The context indicates an update server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "diagnostic-tool-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/diagnostics",
+        "line": 654
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "Diagnostic tool connected to 203.0.113.10, running tests"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "DIAGNOSTIC_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-146.85.249.177.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5913
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "146.85.249.177",
+        "context": "146.85.249.177-release(Aug  6 2024,16:44:27)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "146.85.249.177",
+          "city": "Columbus",
+          "region": "Ohio",
+          "country": "US",
+          "loc": "39.9874,-83.0456",
+          "org": "AS600 OARnet",
+          "postal": "43212",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.9,
+        "gists": [
+          "`146.85.249.177` is the version of dectserver, which is same with origin file name `dect-server-146.85.249.177.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-146.85.249.177.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 8643
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "1.1.1.1",
+        "context": "1.1.1.1[%d]speed test start"
+      },
+      "details": {
+        "geo": {
+          "ip": "1.1.1.1",
+          "hostname": "one.one.one.one",
+          "anycast": true,
+          "city": "Pyongyang",
+          "region": "Pyongyang",
+          "country": "KP",
+          "loc": "39.0339,125.7543",
+          "org": "AS13335 Cloudflare, Inc.",
+          "timezone": "Asia/Pyongyang"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`1.1.1.1` is the dns server provided by Cloudflare.",
+          "Proven by development: Used to resolve hostname."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is the public DNS server.",
+          "Can be reconfigure via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 1234
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.5",
+        "context": "203.0.113.5-release(Aug  7 2024,12:00:00)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.8,
+        "gists": [
+          "`203.0.113.5` is the version of dectserver, which is same with origin file name `dect-server-203.0.113.5.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5678
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "192.0.2.1[%d]connection established"
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 4321
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "198.51.100.2",
+        "context": "198.51.100.2-release(Aug  7 2024,12:34:56)dectserver version:%s"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of dectserver, which is same with origin file name `dect-server-198.51.100.2.zip`",
+          "The matched context has prefix `-release` is the key word of version"
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 7890
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "203.0.113.10[%d]diagnostic start"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 1234
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.5",
+        "context": "Server IP: 203.0.113.5, last update on Aug 7 2024, 12:00:00"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.8,
+        "gists": [
+          "`203.0.113.5` is the version of dectserver, which is same with origin file name `dect-server-203.0.113.5.zip`",
+          "The matched context indicates a server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 5678
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "Testing connection to 192.0.2.1, please wait..."
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 4321
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "198.51.100.2",
+        "context": "Update server IP: 198.51.100.2, version: %s"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of dectserver, which is same with origin file name `dect-server-198.51.100.2.zip`",
+          "The matched context indicates an update server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "dect-server-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/dectserver",
+        "line": 7890
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "Diagnostic server: 203.0.113.10, initiating tests"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "ILLEGAL_NETWORK_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+   {
+    "file": {
+      "name": "network-config-203.0.113.5.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/config/network",
+        "line": 102
+      },
+      "result": {
+        "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped",
+        "text": "203.0.113.5",
+        "context": "Primary server IP: 203.0.113.5, set on Aug 7 2024"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.5",
+          "city": "Testville",
+          "region": "Test Region",
+          "country": "Test Country",
+          "loc": "45.0000,-93.0000",
+          "org": "AS12345 Test Organization",
+          "postal": "12345",
+          "timezone": "America/Test"
+        }
+      }
+    },
+    "risk": {
+      "type": "UNAUTHORIZED_ACCESS",
+      "ignore": true,
+      "confidence": {
+        "score": 0.7,
+        "gists": [
+          "`203.0.113.5` is the version of the primary server, matching the file name `network-config-203.0.113.5.zip`",
+          "The context indicates a primary server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "example-data-192.0.2.1.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/data/examples",
+        "line": 215
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "192.0.2.1",
+        "context": "Attempting connection to example server at 192.0.2.1"
+      },
+      "details": {
+        "geo": {
+          "ip": "192.0.2.1",
+          "hostname": "example.com",
+          "anycast": false,
+          "city": "Example City",
+          "region": "Example Region",
+          "country": "EX",
+          "loc": "37.7749,-122.4194",
+          "org": "AS67890 Example Organization",
+          "timezone": "America/Example"
+        }
+      }
+    },
+    "risk": {
+      "type": "POTENTIAL_MISCONFIGURATION",
+      "ignore": false,
+      "confidence": {
+        "score": 1,
+        "gists": [
+          "`192.0.2.1` is a reserved IP for documentation and example purposes.",
+          "Proven by development: Used for testing network configurations."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a reserved IP address.",
+          "Can be reconfigured via config file."
+        ]
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "update-server-198.51.100.2.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/updates",
+        "line": 378
+      },
+      "result": {
+        "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, not stripped",
+        "text": "198.51.100.2",
+        "context": "Update server IP: 198.51.100.2, last checked on Aug 7 2024"
+      },
+      "details": {
+        "geo": {
+          "ip": "198.51.100.2",
+          "city": "Documentation City",
+          "region": "Documentation Region",
+          "country": "DC",
+          "loc": "40.7128,-74.0060",
+          "org": "AS13579 Documentation Organization",
+          "postal": "10007",
+          "timezone": "America/New_York"
+        }
+      }
+    },
+    "risk": {
+      "type": "NETWORK_CONFIGURATION",
+      "ignore": true,
+      "confidence": {
+        "score": 0.85,
+        "gists": [
+          "`198.51.100.2` is the version of the update server, matching the file name `update-server-198.51.100.2.zip`",
+          "The context indicates an update server IP."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": []
+      }
+    }
+  },
+  {
+    "file": {
+      "name": "diagnostic-tool-203.0.113.10.zip"
+    },
+    "detect": {
+      "config": {
+        "name": "ip_detect",
+        "regexs": [
+          "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b"
+        ]
+      },
+      "location": {
+        "path": "/diagnostics",
+        "line": 654
+      },
+      "result": {
+        "type": "ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 4.9.75, with debug_info, not stripped",
+        "text": "203.0.113.10",
+        "context": "Diagnostic tool connected to 203.0.113.10, running tests"
+      },
+      "details": {
+        "geo": {
+          "ip": "203.0.113.10",
+          "hostname": "test.example.com",
+          "anycast": false,
+          "city": "Test City",
+          "region": "Test Region",
+          "country": "TC",
+          "loc": "34.0522,-118.2437",
+          "org": "AS24680 Test Organization",
+          "timezone": "America/Los_Angeles"
+        }
+      }
+    },
+    "risk": {
+      "type": "DIAGNOSTIC_ACCESS",
+      "ignore": false,
+      "confidence": {
+        "score": 0.95,
+        "gists": [
+          "`203.0.113.10` is used for network diagnostics.",
+          "Proven by development: Used for testing network performance."
+        ]
+      },
+      "security": {
+        "score": 0,
+        "gists": [
+          "Is a test IP address.",
+          "Can be reconfigured via config file."
         ]
       }
     }

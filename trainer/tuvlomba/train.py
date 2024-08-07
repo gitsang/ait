@@ -12,7 +12,8 @@ trainer_output_dir = "output_dir"
 dataset_path = "train_data.json"
 
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
-tokenizer = AutoTokenizer.from_pretrained(tokenizer_name_or_path)
+tokenizer = AutoTokenizer.from_pretrained(
+        tokenizer_name_or_path, model_max_length=1024)
 data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
 
 
