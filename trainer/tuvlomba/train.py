@@ -18,11 +18,11 @@ data_collator = DataCollatorForSeq2Seq(tokenizer, model=model)
 
 def tokenize_function(examples):
     model_inputs = tokenizer(
-        examples["input_text"], padding="max_length", truncation=True
+        examples["input_text"], padding=True, truncation=True
     )
     with tokenizer.as_target_tokenizer():
         labels = tokenizer(
-            examples["label_text"], padding="max_length", truncation=True
+            examples["label_text"], padding=True, truncation=True
         )
     model_inputs["labels"] = labels["input_ids"]
     return model_inputs

@@ -1,59 +1,15 @@
 import json
 from datasets import Dataset
 
-input_prompt = """
-# {}
-
-## Detection
-
-### Config: {}
-
-{}
-
-### Location
-
-{}:{}
-
-### 2.3 Result
-
-#### Type
-
-{}
-
-#### Text
-
-{}
-
-#### Context
-
-{}
-
-### Details
-
-```json
-{}
-```
-
-### Risk
-
-Type: {}
-
-Ignore: {}
-
-#### Confidence
-
-score: {}
-
-{}
-
-#### Security
-
-score: {}
-
-{}
+input_tmpl = """
+In the extracted of `{}`, we found `{}` from `{}` file `{}:{}` by config `{}`.
+Please tell me the risk.
 """
 
-labels_prompt = "{}"
+labels_prompt = """
+There is the risk of `{}`, with confidence `{}`, because:
+{}
+"""
 
 
 class LocalJsonDataset:
@@ -69,28 +25,21 @@ class LocalJsonDataset:
         inputs = []
         labels = []
         for item in data:
-            input_text = input_prompt.format(
+            input_text = input_tmpl.format(
                 item['file']['name'],
-                item['detect']['config']['name'],
-                item['detect']['config']['regexs'],
+                item['detect']['result']['text'],
+                item['detect']['result']['type'],
                 item['detect']['location']['path'],
                 item['detect']['location']['line'],
-                item['detect']['result']['type'],
-                item['detect']['result']['text'],
-                item['detect']['result']['context'],
-                json.dumps(item['detect']['details']),
-                item['risk']['type'],
-                item['risk']['ignore'],
-                item['risk']['confidence']['score'],
-                item['risk']['confidence']['gists'],
-                item['risk']['security']['score'],
-                item['risk']['security']['gists'],
+                item['detect']['config']['name'],
             ) + self.tokenizer.eos_token
             inputs.append(input_text)
 
             label_text = labels_prompt.format(
-                item['risk']['confidence']['score']
-            )
+                item['risk']['type'],
+                item['risk']['confidence']['score'],
+                item['risk']['confidence']['gists'],
+            ) + self.tokenizer.eos_token
             labels.append(label_text)
 
         dataset = Dataset.from_dict({
