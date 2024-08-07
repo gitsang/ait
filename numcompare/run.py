@@ -1,6 +1,8 @@
 from transformers import AutoModelForSeq2SeqLM
 from transformers import AutoTokenizer
 
+# model_name_or_path = "bigscience/mt0-large"
+# tokenizer_name_or_path = "bigscience/mt0-large"
 model_name_or_path = "lora_model"
 tokenizer_name_or_path = "lora_model"
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
@@ -14,7 +16,7 @@ def generate_answer(question):
         return_tensors="pt",
         padding=True,
         truncation=True
-    ).to("cuda")
+    )
     outputs = model.generate(**inputs, max_new_tokens=2048, use_cache=True)
     decoded_output = tokenizer.batch_decode(
             outputs, skip_special_tokens=True)[0]

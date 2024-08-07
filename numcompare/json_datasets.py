@@ -7,11 +7,7 @@ input_prompt = """下面列出了一个问题. 请写出问题的答案.
 ### 答案:
 {}"""
 
-label_prompt = """下面列出了一个问题. 请写出问题的答案.
-### 问题:
-{}
-### 答案:
-{}"""
+label_prompt = """{}"""
 
 
 class LocalJsonDataset:
@@ -27,11 +23,8 @@ class LocalJsonDataset:
         inputs = []
         labels = []
         for item in data:
-            input_text = input_prompt.format(
-                item['question'], item['answer']) + self.tokenizer.eos_token
-            inputs.append(input_text)
-            label_text = label_prompt.format(item['answer'])
-            labels.append(label_text)
+            inputs.append(item['question'])
+            labels.append(item['answer'])
 
         dataset = Dataset.from_dict({
             "input_text": inputs,
